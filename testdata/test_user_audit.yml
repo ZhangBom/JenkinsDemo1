@@ -1,0 +1,48 @@
+- test:
+    epic: 医院招标采购系统接口自动化测试
+    feature: 用户管理模块
+    name: ${name}
+    request:
+      url: user/findAll
+      method: post
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+        token: ${admin_token}
+      json:
+        currentPage: ${currentPage}
+        limit: ${limit}
+        sort: ${sort}
+    extract: ${extract}
+    validate:
+      - eq: [ $.code, '${code}' ]
+      - eq: [ $.msg, '${msg}' ]
+    parametrize:
+      - [ 'name','currentPage','limit','sort','code','msg','extract' ]
+      - [ '查询所有用户',1,50,' ','200','请求数据成功',"{'userid1': '$.data.contentList[random(1,50).userId]','userid2': '$.data.contentList[random(1,50).userId]'}"]
+#      - [ '查询所有用户',1,50,' ','200','请求数据成功',"{'userid1': '$.data.contentList[random(1,50)].userId[random(1,20)]','userid2': '$.data.contentList[random(1,50)].userId'}" ]
+- test:
+    epic: 医院招标采购系统接口自动化测试
+    feature: 用户管理模块
+    name: ${name}
+    request:
+      url: user/ban_user
+      method: put
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+        token: ${admin_token}
+      json:
+        userId: ${userId}
+        userStatus: ${userStatus}
+    validate:
+      - eq: [ $.code, '${code}' ]
+      - eq: [ $.msg, '${msg}' ]
+      - select_data: [ '${userStatus}','${sql}' ]
+    restore:
+      update_data: ${restore_sql}
+    parametrize:
+      - [ 'name','userId','userStatus','code','msg','sql','restore_sql' ]
+      - [ '封禁用户','${userid1}',1,'200','操作成功',"select user_status from tab_user where user_id ='${userid1}'","UPDATE tab_user SET user_status= 0 WHERE user_id='${userid1}'"]
+      - [ '解封用户','${userid2}',0,'200','操作成功',"select user_status from tab_user where user_id ='${userid2}'","UPDATE tab_user SET user_status= 1 WHERE user_id='${userid2}'"]
+

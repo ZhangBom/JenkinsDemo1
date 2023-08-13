@@ -16,7 +16,10 @@
        - eq: [$.msg, '${msg}']
     parametrize:
       - ['name','uname','upass','code','msg','extract']
-      - ['有效登录','admin','zhangbo123','200','登录成功','{token: $.data.token}']
+      - ['有效登录','admin','zhangbo123','200','登录成功',null]
       - ['无效登录','admin1','zhangbo1234','403','用户名或密码错误',null]
+      - ['密码为空','admin','','403','用户名或密码错误',null]
+      - ['用户名为空','','zhangbo1234','403','用户名或密码错误',null]
+      - [ '空参数','','','403','用户名或密码错误',null ]
 
 

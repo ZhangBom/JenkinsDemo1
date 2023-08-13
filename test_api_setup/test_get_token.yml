@@ -1,0 +1,22 @@
+- test:
+    feature: 获取token
+    name: ${name}
+    request:
+      url: user/login
+      method: POST
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+      json:
+        userName: ${uname}
+        userPassword: ${upass}
+    extract: ${extract}
+    validate:
+       - eq: [$.code, '${code}']
+       - eq: [$.msg, '${msg}']
+    parametrize:
+      - ['name','uname','upass','code','msg','extract']
+      - ['管理员获取token','admin','zhangbo123','200','登录成功',"{'admin_token': '$.data.token'}"]
+      - ['专家获取token','zhangbo','zhangbo123','200','登录成功',"{'expert_token': '$.data.token'}"]
+      - ['项目负责人获取token','zhangwei','zhangbo123','200','登录成功',"{'purchase_manager_token': '$.data.token'}"]
+      - ['供应商获取token','zhoukeyu','zhangbo123','200','登录成功',"{'vendor_token': '$.data.token'}"]
