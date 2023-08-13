@@ -1,0 +1,41 @@
+[ {
+  "uid" : "dbc08b62cb3051b9",
+  "name" : "无效登录",
+  "time" : {
+    "start" : 1691899922176,
+    "stop" : 1691899922331,
+    "duration" : 155
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9db937c8c02bb028",
+  "name" : "有效登录",
+  "time" : {
+    "start" : 1691899921870,
+    "stop" : 1691899922170,
+    "duration" : 300
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4fc837a09cc9c50",
+  "name" : "有token获取用户信息",
+  "time" : {
+    "start" : 1691899922335,
+    "stop" : 1691899922352,
+    "duration" : 17
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1b3c575251854a62",
+  "name" : "无token获取用户信息",
+  "time" : {
+    "start" : 1691899922356,
+    "stop" : 1691899922368,
+    "duration" : 12
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,22 @@
+- test:
+    feature: 登录
+    name: ${name}
+    request:
+      url: user/login
+      method: POST
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+      json:
+        userName: ${uname}
+        userPassword: ${upass}
+    extract: ${extract}
+    validate:
+       - eq: [$.code, '${code}']
+       - eq: [$.msg, '${msg}']
+    parametrize:
+      - ['name','uname','upass','code','msg','extract']
+      - ['有效登录','admin','zhangbo123','200','登录成功','{token: $.data.token}']
+      - ['无效登录','admin1','zhangbo1234','403','用户名或密码错误',null]
+
+

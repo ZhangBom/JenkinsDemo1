@@ -1,0 +1,65 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-2O1QR2T",
+    "children" : [ {
+      "name" : "26628-MainThread",
+      "children" : [ {
+        "name" : "无效登录",
+        "uid" : "dbc08b62cb3051b9",
+        "parentUid" : "142486b736a00228504eff3556cc0d26",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691899922176,
+          "stop" : 1691899922331,
+          "duration" : 155
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'feature': '登录', 'name': '无效登录', 'request': {'url': 'user/login', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'python-requests/2.18.4'}, 'json': {'userName': 'admin1', 'userPassword': 'zhangbo1234'}}, 'validate': [{'eq': ['$.code', '403']}, {'eq': ['$.msg', '用户名或密码错误']}]}" ]
+      }, {
+        "name" : "有token获取用户信息",
+        "uid" : "4fc837a09cc9c50",
+        "parentUid" : "142486b736a00228504eff3556cc0d26",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691899922335,
+          "stop" : 1691899922352,
+          "duration" : 17
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'feature': '用户管理', 'name': '有token获取用户信息', 'request': {'url': 'user/userinfo', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'python-requests/2.18.4', 'token': '${token}'}}, 'validate': [{'eq': ['$.code', '200']}]}" ]
+      }, {
+        "name" : "有效登录",
+        "uid" : "9db937c8c02bb028",
+        "parentUid" : "142486b736a00228504eff3556cc0d26",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691899921870,
+          "stop" : 1691899922170,
+          "duration" : 300
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'feature': '登录', 'name': '有效登录', 'request': {'url': 'user/login', 'method': 'POST', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'python-requests/2.18.4'}, 'json': {'userName': 'admin', 'userPassword': 'zhangbo123'}}, 'extract': '{token: $.data.token}', 'validate': [{'eq': ['$.code', '200']}, {'eq': ['$.msg', '登录成功']}]}" ]
+      }, {
+        "name" : "无token获取用户信息",
+        "uid" : "1b3c575251854a62",
+        "parentUid" : "142486b736a00228504eff3556cc0d26",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691899922356,
+          "stop" : 1691899922368,
+          "duration" : 12
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'feature': '用户管理', 'name': '无token获取用户信息', 'request': {'url': 'user/userinfo', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'python-requests/2.18.4', 'token': 'None'}}, 'validate': [{'eq': ['$.code', '403']}]}" ]
+      } ],
+      "uid" : "142486b736a00228504eff3556cc0d26"
+    } ],
+    "uid" : "fb69c85468c20f38c8dfca277b0d9364"
+  } ]
+}

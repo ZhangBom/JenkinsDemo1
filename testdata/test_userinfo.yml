@@ -1,0 +1,16 @@
+- test:
+    feature: 用户管理
+    name: ${name}
+    request:
+      url: user/userinfo
+      method: GET
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+        token: ${token}
+    validate:
+       - eq: [$.code, '${code}']
+    parametrize:
+      - [ 'name','code','token' ]
+      - [ '有token获取用户信息','200','${token}']
+      - [ '无token获取用户信息','403',null ]

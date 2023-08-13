@@ -1,0 +1,284 @@
+{
+  "uid" : "1b3c575251854a62",
+  "name" : "无token获取用户信息",
+  "fullName" : "testcase.test_case_temp.TestLogin#test_userinfo",
+  "historyId" : "df6cf31f317567f2f45e5f91dd50fb9f",
+  "time" : {
+    "start" : 1691899922356,
+    "stop" : 1691899922368,
+    "duration" : 12
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "wd",
+    "time" : {
+      "start" : 1691899921869,
+      "stop" : 1691899921870,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f54cb9de4cf0eee1",
+      "name" : "log",
+      "source" : "f54cb9de4cf0eee1.txt",
+      "type" : "text/plain",
+      "size" : 648
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "用户管理"
+  }, {
+    "name" : "parentSuite",
+    "value" : "testcase"
+  }, {
+    "name" : "suite",
+    "value" : "test_case_temp"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestLogin"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-2O1QR2T"
+  }, {
+    "name" : "thread",
+    "value" : "26628-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testcase.test_case_temp"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "case",
+    "value" : "{'feature': '用户管理', 'name': '无token获取用户信息', 'request': {'url': 'user/userinfo', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'python-requests/2.18.4', 'token': 'None'}}, 'validate': [{'eq': ['$.code', '403']}]}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 22,
+        "unknown" : 0,
+        "total" : 22
+      },
+      "items" : [ {
+        "uid" : "7b10544f482fc102",
+        "reportUrl" : "http://localhost:8081/job/test_message/40/allure/#testresult/7b10544f482fc102",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691895423088,
+          "stop" : 1691895423097,
+          "duration" : 9
+        }
+      }, {
+        "uid" : "56a01b02d0e942ff",
+        "reportUrl" : "http://localhost:8081/job/test_message/39/allure/#testresult/56a01b02d0e942ff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691895186097,
+          "stop" : 1691895186107,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "bcdf438dea995405",
+        "reportUrl" : "http://localhost:8081/job/test_message/38/allure/#testresult/bcdf438dea995405",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691894825365,
+          "stop" : 1691894825374,
+          "duration" : 9
+        }
+      }, {
+        "uid" : "ed68fce64f40e049",
+        "reportUrl" : "http://localhost:8081/job/test_message/37/allure/#testresult/ed68fce64f40e049",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691894346089,
+          "stop" : 1691894346104,
+          "duration" : 15
+        }
+      }, {
+        "uid" : "9641bea9bfa46efe",
+        "reportUrl" : "http://localhost:8081/job/test_message/36/allure/#testresult/9641bea9bfa46efe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691892707622,
+          "stop" : 1691892707631,
+          "duration" : 9
+        }
+      }, {
+        "uid" : "f23ca6735ebe1af6",
+        "reportUrl" : "http://localhost:8081/job/test_message/35/allure/#testresult/f23ca6735ebe1af6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691892551184,
+          "stop" : 1691892551193,
+          "duration" : 9
+        }
+      }, {
+        "uid" : "83cb239f84183511",
+        "reportUrl" : "http://localhost:8081/job/test_message/34/allure/#testresult/83cb239f84183511",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691892088898,
+          "stop" : 1691892088908,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "2c7415ab463bae4c",
+        "reportUrl" : "http://localhost:8081/job/test_message/33/allure/#testresult/2c7415ab463bae4c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691891811261,
+          "stop" : 1691891811271,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "70c0fd85c6094b74",
+        "reportUrl" : "http://localhost:8081/job/test_message/32/allure/#testresult/70c0fd85c6094b74",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691891030020,
+          "stop" : 1691891030028,
+          "duration" : 8
+        }
+      }, {
+        "uid" : "7ea51c733c4591cf",
+        "reportUrl" : "http://localhost:8081/job/test_message/31/allure/#testresult/7ea51c733c4591cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691890835754,
+          "stop" : 1691890835764,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "5bfbb1432e5f7de9",
+        "reportUrl" : "http://localhost:8081/job/test_message/30/allure/#testresult/5bfbb1432e5f7de9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691890657067,
+          "stop" : 1691890657078,
+          "duration" : 11
+        }
+      }, {
+        "uid" : "970fa4c0606206bc",
+        "reportUrl" : "http://localhost:8081/job/test_message/29/allure/#testresult/970fa4c0606206bc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691890429430,
+          "stop" : 1691890429441,
+          "duration" : 11
+        }
+      }, {
+        "uid" : "c95edc6989a290d9",
+        "reportUrl" : "http://localhost:8081/job/test_message/28/allure/#testresult/c95edc6989a290d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691890183889,
+          "stop" : 1691890183899,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "3a5e9b1bbda4ee39",
+        "reportUrl" : "http://localhost:8081/job/test_message/27/allure/#testresult/3a5e9b1bbda4ee39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691887716916,
+          "stop" : 1691887716926,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "eef8f45b8a066cc8",
+        "reportUrl" : "http://localhost:8081/job/test_message/26/allure/#testresult/eef8f45b8a066cc8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691887274807,
+          "stop" : 1691887274816,
+          "duration" : 9
+        }
+      }, {
+        "uid" : "75e5ff48824e7e82",
+        "reportUrl" : "http://localhost:8081/job/test_message/25/allure/#testresult/75e5ff48824e7e82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691887109710,
+          "stop" : 1691887109720,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "4657f0284392476b",
+        "reportUrl" : "http://localhost:8081/job/test_message/24/allure/#testresult/4657f0284392476b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691886052456,
+          "stop" : 1691886052466,
+          "duration" : 10
+        }
+      }, {
+        "uid" : "c4ea84405ab914db",
+        "reportUrl" : "http://localhost:8081/job/test_message/23/allure/#testresult/c4ea84405ab914db",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691885867023,
+          "stop" : 1691885867034,
+          "duration" : 11
+        }
+      }, {
+        "uid" : "505f5dcfd40c8e8d",
+        "reportUrl" : "http://localhost:8081/job/test_message/22/allure/#testresult/505f5dcfd40c8e8d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691884353530,
+          "stop" : 1691884353553,
+          "duration" : 23
+        }
+      }, {
+        "uid" : "c22d39835185c182",
+        "reportUrl" : "http://localhost:8081/job/test_message/21/allure/#testresult/c22d39835185c182",
+        "status" : "passed",
+        "time" : {
+          "start" : 1691734899148,
+          "stop" : 1691734899158,
+          "duration" : 10
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1b3c575251854a62.json",
+  "parameterValues" : [ "{'feature': '用户管理', 'name': '无token获取用户信息', 'request': {'url': 'user/userinfo', 'method': 'GET', 'headers': {'Content-Type': 'application/json', 'User-Agent': 'python-requests/2.18.4', 'token': 'None'}}, 'validate': [{'eq': ['$.code', '403']}]}" ]
+}
