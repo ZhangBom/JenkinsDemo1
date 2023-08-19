@@ -13,14 +13,16 @@
         currentPage: ${currentPage}
         limit: ${limit}
         sort: ${sort}
+        conditions: ${conditions}
+        title: ${title}
     extract: ${extract}
     validate:
       - eq: [ $.code, '${code}' ]
       - eq: [ $.msg, '${msg}' ]
     parametrize:
-      - [ 'name','currentPage','limit','sort','code','msg','extract' ]
-      - [ '查询所有用户',1,50,' ','200','请求数据成功',"{'userid1': '$.data.contentList[random(1,50).userId]','userid2': '$.data.contentList[random(1,50).userId]'}"]
-#      - [ '查询所有用户',1,50,' ','200','请求数据成功',"{'userid1': '$.data.contentList[random(1,50)].userId[random(1,20)]','userid2': '$.data.contentList[random(1,50)].userId'}" ]
+      - [ 'name','currentPage','limit','sort','conditions','title','code','msg','extract' ]
+      - [ '查询所有未封禁用户',1,45,' ','userStatus','0','200','请求数据成功',"{'userid1':'$.data.contentList[random(1,44)].userId','userid1_status':'$.data.contentList[random(1,44)].userStatus'}"]
+      - [ '查询所有已封禁用户',1,5 ,' ','userStatus','1','200','请求数据成功',"{'userid2':'$.data.contentList[random(1,4)].userId','userid2_status':'$.data.contentList[random(1,4)].userStatus'}"]
 - test:
     epic: 医院招标采购系统接口自动化测试
     feature: 用户管理模块
@@ -38,11 +40,11 @@
     validate:
       - eq: [ $.code, '${code}' ]
       - eq: [ $.msg, '${msg}' ]
-      - select_data: [ '${userStatus}','${sql}' ]
+      - eq_data: ['${userStatus}','${sql}' ]
     restore:
       update_data: ${restore_sql}
     parametrize:
       - [ 'name','userId','userStatus','code','msg','sql','restore_sql' ]
-      - [ '封禁用户','${userid1}',1,'200','操作成功',"select user_status from tab_user where user_id ='${userid1}'","UPDATE tab_user SET user_status= 0 WHERE user_id='${userid1}'"]
-      - [ '解封用户','${userid2}',0,'200','操作成功',"select user_status from tab_user where user_id ='${userid2}'","UPDATE tab_user SET user_status= 1 WHERE user_id='${userid2}'"]
+      - [ '封禁用户','${userid1}','${userid1_status}','200','操作成功',"select user_status from tab_user where user_id ='${userid1}'","UPDATE tab_user SET user_status= '${userid1_status}' WHERE user_id='${userid1}'"]
+      - [ '解封用户','${userid2}','${userid2_status}','200','操作成功',"select user_status from tab_user where user_id ='${userid2}'","UPDATE tab_user SET user_status= '${userid2_status}' WHERE user_id='${userid2}'"]
 

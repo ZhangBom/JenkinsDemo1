@@ -10,6 +10,7 @@ base_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 # 主机地址
 host = "http://localhost:8888/"
 
+hwyun = "http://123.60.3.181:8888/"
 base_url = host
 
 

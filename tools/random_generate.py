@@ -5,23 +5,30 @@
 import re
 import random
 
-# def replace_random(match):
-#     return str(random.randint(match.group(1), match.group(2)))
 
-data = "{'userid1': '$.data.contentList[random(1,50)].userId[random(1,20)]','userid1_status': '$.data.contentList[random(1,50)].userId'}"
+def random_generate(pattern, data):
+    """
+    :param pattern: 需要匹配的正则表达式
+    :param data: 需要匹配替换的字符串数据
+    :return: 替换后返回字符串数据
+    """
+    return re.sub(pattern, replace_random, data)
 
-pattern = r'random\((\d+),(\d+)\)'  # 正则表达式模式
 
 random_values = {}  # 用于存储已生成的随机数值
 
+
 def replace_random(match):
+    """
+    :param match: 匹配到的字符串数据
+    :return: 生成的随机数字符数据
+    """
     lower = int(match.group(1))
     upper = int(match.group(2))
+    # 构建random(lower,upper)数据
     key = (lower, upper)
+    # 判断该数据是否已经存在为多次使用
     if key not in random_values:
+        # 没有构建过，生成随机数
         random_values[key] = random.randint(lower, upper)
     return str(random_values[key])
-
-result = re.sub(pattern, replace_random, data)
-
-print(result)

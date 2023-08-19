@@ -36,6 +36,5 @@ def case_template(raw_dict):
                 case_name.append(case["name"])
         else:
             case_list.append(values)
-            print(case_name)
             case_name.append(values["name"])
     return case_list

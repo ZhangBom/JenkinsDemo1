@@ -1,5 +1,6 @@
 - test:
-    feature: 登录
+    epic: 医院招标采购系统接口自动化测试
+    feature: 用户登录模块
     name: ${name}
     request:
       url: user/login

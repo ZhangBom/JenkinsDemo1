@@ -1,5 +1,5 @@
 - test:
-    feature: 用户管理
+    feature: 用户管理模块
     name: ${name}
     request:
       url: user/userinfo
@@ -12,5 +12,8 @@
        - eq: [$.code, '${code}']
     parametrize:
       - [ 'name','code','token' ]
-      - [ '有token获取用户信息','200','${token}']
+      - [ '获取管理员用户信息','200','${admin_token}']
+      - [ '获取供应商用户信息','200','${vendor_token}']
+      - [ '获取项目负责人用户信息','200','${purchase_manager_token}']
+      - [ '获取专家用户信息','200','${expert_token}']
       - [ '无token获取用户信息','403',null ]

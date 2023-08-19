@@ -1,0 +1,30 @@
+- test:
+    epic: 医院招标采购系统接口自动化测试
+    feature: 用户注册模块
+    name: ${name}
+    request:
+      url: user/register
+      method: POST
+      headers:
+        Content-Type: application/json
+        User-Agent: python-requests/2.18.4
+      json:
+        userCompanyName: ${userCompanyName}
+        userContactName: ${userContactName}
+        userEmail: ${userEmail}
+        userName: ${userName}
+        userPassword: ${userPassword}
+        userPhone: ${userPhone}
+        userType: ${userType}
+    extract: ${extract}
+    validate:
+       - eq: [$.code, '${code}']
+       - eq: [$.msg, '${msg}']
+       - select_data: [$.data.userId ,'${sql}' ]
+    restore:
+      delete_data: ${restore_sql}
+    parametrize:
+      - ['name','userCompanyName','userName','userContactName','userEmail','userPassword','userPhone','userType','code','msg','extract','sql','restore_sql']
+      - ['专家注册','杭州图特科技','jiajia','佳佳','zxcvbnq@qq.com','zhangbo123','13438017064','专家','200','注册成功',"{'register_userId1':'$.data.userId'}","select user_id from tab_user where user_id = '${register_userId1}'","Delete FROM tab_user  WHERE user_id='${register_userId1}'"]
+      - ['供应商注册','杭州图特科技','jiajia1','加加','zhangbo123@qq.com','zhangbo123','13438017065','供应商','200','注册成功',"{'register_userId2':'$.data.userId'}","select user_id from tab_user where user_id ='${register_userId2}'","Delete FROM tab_user  WHERE user_id='${register_userId2}'"]
+

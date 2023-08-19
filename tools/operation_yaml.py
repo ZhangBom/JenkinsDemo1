@@ -38,7 +38,7 @@ def read_yml_key(file_name='extract.yml'):
 
 
 # 读取yml用例
-def read_yml_file(file_name='test_login_demo1.yml'):
+def read_yml_file(file_name='test_user_audit.yml'):
     log.info("正在调用接口关联读取方法...")
     file_name = base_path + os.sep + "testdata" + os.sep + file_name
     with open(file_name, 'r', encoding='utf-8') as f:
@@ -46,4 +46,4 @@ def read_yml_file(file_name='test_login_demo1.yml'):
         return case_template(raw_dict)
 
 if __name__ == '__main__':
-    read_yml_file()
+    read_yml_key()
